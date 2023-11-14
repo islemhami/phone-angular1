@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Smartphone :</h2>
+    </div>
+    <form >
+        <div  hidden class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Smartphone</label>
+        <input type="text" [(ngModel)]="newSmartphone.idSmartphone"
+        name="idSmartphone" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Smartphone</label>
+        <input type="text"[(ngModel)]= "newSmartphone.nomModele"name="nomModele" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prix Smartphone</label>
+        <input type="number" [(ngModel)]= "newSmartphone.prixSmartphone" name="prixSmartphone" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Couleur</label>
+        <input type="text" [(ngModel)]= "newSmartphone.color" name="color" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Marque</label>
+            <select class="form-control form-control-lg" id="idMarque" name="idMarque" [(ngModel)]="newIdMarque">
+                <option *ngFor="let marque of marques" [value]="marque.idMarque">
+                    {{marque.nomMarque}}
+                </option>
+            </select>
+        </div>
+        <div class="mt-2">
+        <button type="submit" (click)="addSmartphone()"class="btn btn-success">Ajouter</button>
+        </div>
+        </form>
+        </div>

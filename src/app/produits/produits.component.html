@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Couleur</th><th>Marque</th></tr>
+           
+         </thead>
+         <tbody *ngFor="let smartphone of smartphones">
+             <tr >
+              <td>{{smartphone.idSmartphone}}</td>
+              <td>{{smartphone.nomModele}}</td>
+              <td>{{smartphone.prixSmartphone}}</td>
+              <td>{{smartphone.color }}</td>
+              <td>{{smartphone.marque?.nomMarque }}</td>
+              <td><a class="btn btn-danger" (click)="supprimerSmartphone(smartphone)">Supprimer</a></td>
+              <td><a class="btn btn-success" [routerLink]="['/updateProduit',smartphone.idSmartphone]">Modifier</a></td>
+            </tr>
+         </tbody>
+         </table>
+       </div>
+     </div>
+</div>
